@@ -25,7 +25,7 @@ def view_task():
 
 def mark_done():
     view_task()
-    if not task: 
+    if not tasks: 
         print("There are no tasks added yet!")
         return
     try:
