@@ -29,14 +29,14 @@ def remove_task():
         return
     try:
         index_del = int(input("Enter the task number to be deleted: ")) - 1
-        if 0 < index_del <= len(tasks):
-            tasks.pop(index_del)
+        if 0 <= index_del < len(tasks):
+            removed_task= tasks.pop(index_del)
+            print(f"'{removed_task['tasks']}' removed sucessfully!")
+            view_task()
         else: 
             print("Number out of range")
     except: 
         print("Please input a valid number")
-
-
 
 
 while True:
