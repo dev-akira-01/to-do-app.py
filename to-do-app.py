@@ -15,17 +15,23 @@ def add_task():
     print(f"'{task}' was added successfully!")
 
 def view_task():
-    
+    if not tasks: 
+        print("There are no tasks added yet!")
+    else:
+        for index, task in enumerate(tasks, start=1):
+            print(f"{index}. {task}")
 
 
 while True:
     menu()
     choice= input("Enter your Choice (1-5): ")
-try:
-    if choice == "1":
-        add_task()
-    else: 
+    try:
+        if choice == "1":
+            add_task()
+        elif choice == "4":
+            view_task()
+        else: 
             print("Please enter a valid number")
-except:
-    print("An unexpected error occured")
+    except:
+        print("An unexpected error occured")
 
