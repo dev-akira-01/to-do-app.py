@@ -13,3 +13,19 @@ def add_task():
     task= input("Enter task to be added: ")
     tasks.append({"tasks":task,"done":False})
     print(f"'{task}' was added successfully!")
+
+def view_task():
+    
+
+
+while True:
+    menu()
+    choice= input("Enter your Choice (1-5): ")
+try:
+    if choice == "1":
+        add_task()
+    else: 
+            print("Please enter a valid number")
+except:
+    print("An unexpected error occured")
+
