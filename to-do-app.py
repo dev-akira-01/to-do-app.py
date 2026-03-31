@@ -2,9 +2,12 @@
 
 tasks= [] #empty list
 
-def task_list():
-    
-
+def menu():
+    print("1. Add New Task")
+    print("2. Remove a Task")
+    print("3. Mark a Task as Done")
+    print("4. View all Tasks")
+    print("5. Exit the Program")
 
 def add_task():
     task= input("Enter task to be added: ")
