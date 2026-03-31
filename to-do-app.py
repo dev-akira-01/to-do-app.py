@@ -23,6 +23,22 @@ def view_task():
         status = "✓" if task["done"] else "✕"
         print(f"{index}. {task['tasks']} [{status}]")
 
+def mark_done():
+    view_task()
+    if not task: 
+        print("There are no tasks added yet!")
+        return
+    try:
+        md_index= int(input("Enter the task number of the task you want to mark done: ")) -1
+        if 0 <= md_index < len(tasks):
+            tasks[md_index]["done"]=True
+            print("Task marked as done")
+        else:
+            print("Number out of range")
+    except ValueError:
+        print("Invalid Number")
+
+
 def remove_task():
     if not tasks:
         print("There are no tasks added yet!")
@@ -35,7 +51,7 @@ def remove_task():
             view_task()
         else: 
             print("Number out of range")
-    except: 
+    except ValueError: 
         print("Please input a valid number")
 
 
@@ -49,6 +65,10 @@ while True:
             view_task()
         elif choice == "2":
             remove_task()
+        elif choice == "3":
+            mark_done()
+        elif choice == 5:
+            print("Programe exited")
         else: 
             print("Please enter a valid number")
     except:
